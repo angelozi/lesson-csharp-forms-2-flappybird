@@ -1,6 +1,6 @@
 ﻿namespace FlappyBird
 {
-    partial class Form1
+    partial class frmGame
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGame));
+            this.SuspendLayout();
+            // 
+            // frmGame
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.BackgroundImage = global::FlappyBird.Properties.Resources.background;
+            this.ClientSize = new System.Drawing.Size(752, 985);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.Name = "frmGame";
+            this.Text = "FlappyBird";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
