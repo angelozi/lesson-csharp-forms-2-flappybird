@@ -145,6 +145,7 @@
             this.pnlBoard.Name = "pnlBoard";
             this.pnlBoard.Size = new System.Drawing.Size(418, 225);
             this.pnlBoard.TabIndex = 1;
+            this.pnlBoard.Visible = false;
             // 
             // lblBoardBest
             // 
@@ -249,6 +250,7 @@
             this.btnRestart.Size = new System.Drawing.Size(214, 75);
             this.btnRestart.TabIndex = 5;
             this.btnRestart.UseVisualStyleBackColor = true;
+            this.btnRestart.Visible = false;
             // 
             // frmGame
             // 
@@ -256,17 +258,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FlappyBird.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(752, 985);
-            this.Controls.Add(this.btnRestart);
-            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lblHelp);
-            this.Controls.Add(this.lblGameScore);
-            this.Controls.Add(this.pnlBoard);
+            this.Controls.Add(this.pcbFlappyBird);
             this.Controls.Add(this.pcbGround);
-            this.Controls.Add(this.pcbPipeBottom2);
+            this.Controls.Add(this.pcbPipeTop1);
             this.Controls.Add(this.pcbPipeTop2);
             this.Controls.Add(this.pcbPipeBottom1);
-            this.Controls.Add(this.pcbPipeTop1);
-            this.Controls.Add(this.pcbFlappyBird);
+            this.Controls.Add(this.pcbPipeBottom2);
+            this.Controls.Add(this.lblGameScore);
+            this.Controls.Add(this.btnStart);
+            this.Controls.Add(this.btnRestart);
+            this.Controls.Add(this.pnlBoard);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmGame";
