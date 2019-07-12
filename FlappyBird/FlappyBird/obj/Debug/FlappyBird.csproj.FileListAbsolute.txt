@@ -1,0 +1,10 @@
+F:\GitHub\lesson-csharp-forms-2-flappybird\FlappyBird\FlappyBird\bin\Debug\FlappyBird.exe.config
+F:\GitHub\lesson-csharp-forms-2-flappybird\FlappyBird\FlappyBird\bin\Debug\FlappyBird.exe
+F:\GitHub\lesson-csharp-forms-2-flappybird\FlappyBird\FlappyBird\bin\Debug\FlappyBird.pdb
+F:\GitHub\lesson-csharp-forms-2-flappybird\FlappyBird\FlappyBird\obj\Debug\FlappyBird.csprojAssemblyReference.cache
+F:\GitHub\lesson-csharp-forms-2-flappybird\FlappyBird\FlappyBird\obj\Debug\FlappyBird.frmGame.resources
+F:\GitHub\lesson-csharp-forms-2-flappybird\FlappyBird\FlappyBird\obj\Debug\FlappyBird.Properties.Resources.resources
+F:\GitHub\lesson-csharp-forms-2-flappybird\FlappyBird\FlappyBird\obj\Debug\FlappyBird.csproj.GenerateResource.cache
+F:\GitHub\lesson-csharp-forms-2-flappybird\FlappyBird\FlappyBird\obj\Debug\FlappyBird.csproj.CoreCompileInputs.cache
+F:\GitHub\lesson-csharp-forms-2-flappybird\FlappyBird\FlappyBird\obj\Debug\FlappyBird.exe
+F:\GitHub\lesson-csharp-forms-2-flappybird\FlappyBird\FlappyBird\obj\Debug\FlappyBird.pdb

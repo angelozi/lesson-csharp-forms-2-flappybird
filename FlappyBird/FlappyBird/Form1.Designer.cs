@@ -154,9 +154,10 @@
             this.lblBoardBest.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblBoardBest.Location = new System.Drawing.Point(215, 132);
             this.lblBoardBest.Name = "lblBoardBest";
-            this.lblBoardBest.Size = new System.Drawing.Size(36, 39);
+            this.lblBoardBest.Size = new System.Drawing.Size(31, 45);
             this.lblBoardBest.TabIndex = 3;
             this.lblBoardBest.Text = "0";
+            this.lblBoardBest.UseCompatibleTextRendering = true;
             // 
             // lblBoardBestText
             // 
@@ -166,9 +167,10 @@
             this.lblBoardBestText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(46)))), ((int)(((byte)(1)))));
             this.lblBoardBestText.Location = new System.Drawing.Point(61, 132);
             this.lblBoardBestText.Name = "lblBoardBestText";
-            this.lblBoardBestText.Size = new System.Drawing.Size(107, 39);
+            this.lblBoardBestText.Size = new System.Drawing.Size(101, 45);
             this.lblBoardBestText.TabIndex = 2;
             this.lblBoardBestText.Text = "BEST";
+            this.lblBoardBestText.UseCompatibleTextRendering = true;
             // 
             // lblBoardScore
             // 
@@ -178,9 +180,10 @@
             this.lblBoardScore.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblBoardScore.Location = new System.Drawing.Point(215, 43);
             this.lblBoardScore.Name = "lblBoardScore";
-            this.lblBoardScore.Size = new System.Drawing.Size(36, 39);
+            this.lblBoardScore.Size = new System.Drawing.Size(31, 45);
             this.lblBoardScore.TabIndex = 1;
             this.lblBoardScore.Text = "0";
+            this.lblBoardScore.UseCompatibleTextRendering = true;
             // 
             // lblBoardScoreText
             // 
@@ -190,9 +193,10 @@
             this.lblBoardScoreText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(46)))), ((int)(((byte)(1)))));
             this.lblBoardScoreText.Location = new System.Drawing.Point(61, 43);
             this.lblBoardScoreText.Name = "lblBoardScoreText";
-            this.lblBoardScoreText.Size = new System.Drawing.Size(139, 39);
+            this.lblBoardScoreText.Size = new System.Drawing.Size(134, 45);
             this.lblBoardScoreText.TabIndex = 0;
             this.lblBoardScoreText.Text = "SCORE";
+            this.lblBoardScoreText.UseCompatibleTextRendering = true;
             // 
             // lblGameScore
             // 
@@ -204,10 +208,11 @@
             this.lblGameScore.Location = new System.Drawing.Point(187, 161);
             this.lblGameScore.MinimumSize = new System.Drawing.Size(400, 0);
             this.lblGameScore.Name = "lblGameScore";
-            this.lblGameScore.Size = new System.Drawing.Size(400, 73);
+            this.lblGameScore.Size = new System.Drawing.Size(400, 84);
             this.lblGameScore.TabIndex = 2;
             this.lblGameScore.Text = "0";
             this.lblGameScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblGameScore.UseCompatibleTextRendering = true;
             // 
             // lblHelp
             // 
@@ -217,9 +222,10 @@
             this.lblHelp.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblHelp.Location = new System.Drawing.Point(255, 539);
             this.lblHelp.Name = "lblHelp";
-            this.lblHelp.Size = new System.Drawing.Size(307, 31);
+            this.lblHelp.Size = new System.Drawing.Size(306, 37);
             this.lblHelp.TabIndex = 3;
             this.lblHelp.Text = "PRESS SPACE TO FLY";
+            this.lblHelp.UseCompatibleTextRendering = true;
             // 
             // btnStart
             // 
@@ -265,6 +271,7 @@
             this.MaximizeBox = false;
             this.Name = "frmGame";
             this.Text = "FlappyBird";
+            this.Load += new System.EventHandler(this.FrmGame_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbFlappyBird)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPipeTop1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPipeBottom1)).EndInit();

@@ -87,6 +87,7 @@
     <None Include="Resources\bird.gif" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\flappyfont.TTF" />
     <None Include="Resources\pipedown.png" />
   </ItemGroup>
   <ItemGroup>
