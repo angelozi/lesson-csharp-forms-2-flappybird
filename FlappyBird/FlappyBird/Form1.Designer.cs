@@ -38,12 +38,19 @@
             this.pcbGround = new System.Windows.Forms.PictureBox();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.pnlBoard = new System.Windows.Forms.Panel();
+            this.lblGameScore = new System.Windows.Forms.Label();
+            this.lblHelp = new System.Windows.Forms.Label();
+            this.lblBoardScoreText = new System.Windows.Forms.Label();
+            this.lblBoardScore = new System.Windows.Forms.Label();
+            this.lblBoardBestText = new System.Windows.Forms.Label();
+            this.lblBoardBest = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFlappyBird)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPipeTop1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPipeBottom1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPipeTop2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPipeBottom2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbGround)).BeginInit();
+            this.pnlBoard.SuspendLayout();
             this.SuspendLayout();
             // 
             // pcbFlappyBird
@@ -128,10 +135,89 @@
             // pnlBoard
             // 
             this.pnlBoard.BackgroundImage = global::FlappyBird.Properties.Resources.board;
+            this.pnlBoard.Controls.Add(this.lblBoardBest);
+            this.pnlBoard.Controls.Add(this.lblBoardBestText);
+            this.pnlBoard.Controls.Add(this.lblBoardScore);
+            this.pnlBoard.Controls.Add(this.lblBoardScoreText);
             this.pnlBoard.Location = new System.Drawing.Point(187, 271);
             this.pnlBoard.Name = "pnlBoard";
             this.pnlBoard.Size = new System.Drawing.Size(418, 225);
             this.pnlBoard.TabIndex = 1;
+            // 
+            // lblGameScore
+            // 
+            this.lblGameScore.AutoSize = true;
+            this.lblGameScore.BackColor = System.Drawing.Color.Transparent;
+            this.lblGameScore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblGameScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblGameScore.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblGameScore.Location = new System.Drawing.Point(187, 161);
+            this.lblGameScore.MinimumSize = new System.Drawing.Size(400, 0);
+            this.lblGameScore.Name = "lblGameScore";
+            this.lblGameScore.Size = new System.Drawing.Size(400, 73);
+            this.lblGameScore.TabIndex = 2;
+            this.lblGameScore.Text = "0";
+            this.lblGameScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblHelp
+            // 
+            this.lblHelp.AutoSize = true;
+            this.lblHelp.BackColor = System.Drawing.Color.Transparent;
+            this.lblHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblHelp.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblHelp.Location = new System.Drawing.Point(255, 539);
+            this.lblHelp.Name = "lblHelp";
+            this.lblHelp.Size = new System.Drawing.Size(307, 31);
+            this.lblHelp.TabIndex = 3;
+            this.lblHelp.Text = "PRESS SPACE TO FLY";
+            // 
+            // lblBoardScoreText
+            // 
+            this.lblBoardScoreText.AutoSize = true;
+            this.lblBoardScoreText.BackColor = System.Drawing.Color.Transparent;
+            this.lblBoardScoreText.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBoardScoreText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(46)))), ((int)(((byte)(1)))));
+            this.lblBoardScoreText.Location = new System.Drawing.Point(61, 43);
+            this.lblBoardScoreText.Name = "lblBoardScoreText";
+            this.lblBoardScoreText.Size = new System.Drawing.Size(139, 39);
+            this.lblBoardScoreText.TabIndex = 0;
+            this.lblBoardScoreText.Text = "SCORE";
+            // 
+            // lblBoardScore
+            // 
+            this.lblBoardScore.AutoSize = true;
+            this.lblBoardScore.BackColor = System.Drawing.Color.Transparent;
+            this.lblBoardScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBoardScore.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblBoardScore.Location = new System.Drawing.Point(215, 43);
+            this.lblBoardScore.Name = "lblBoardScore";
+            this.lblBoardScore.Size = new System.Drawing.Size(36, 39);
+            this.lblBoardScore.TabIndex = 1;
+            this.lblBoardScore.Text = "0";
+            // 
+            // lblBoardBestText
+            // 
+            this.lblBoardBestText.AutoSize = true;
+            this.lblBoardBestText.BackColor = System.Drawing.Color.Transparent;
+            this.lblBoardBestText.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBoardBestText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(46)))), ((int)(((byte)(1)))));
+            this.lblBoardBestText.Location = new System.Drawing.Point(61, 132);
+            this.lblBoardBestText.Name = "lblBoardBestText";
+            this.lblBoardBestText.Size = new System.Drawing.Size(107, 39);
+            this.lblBoardBestText.TabIndex = 2;
+            this.lblBoardBestText.Text = "BEST";
+            // 
+            // lblBoardBest
+            // 
+            this.lblBoardBest.AutoSize = true;
+            this.lblBoardBest.BackColor = System.Drawing.Color.Transparent;
+            this.lblBoardBest.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBoardBest.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblBoardBest.Location = new System.Drawing.Point(215, 132);
+            this.lblBoardBest.Name = "lblBoardBest";
+            this.lblBoardBest.Size = new System.Drawing.Size(36, 39);
+            this.lblBoardBest.TabIndex = 3;
+            this.lblBoardBest.Text = "0";
             // 
             // frmGame
             // 
@@ -139,6 +225,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FlappyBird.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(752, 985);
+            this.Controls.Add(this.lblHelp);
+            this.Controls.Add(this.lblGameScore);
             this.Controls.Add(this.pnlBoard);
             this.Controls.Add(this.pcbGround);
             this.Controls.Add(this.pcbPipeBottom2);
@@ -156,6 +244,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbPipeTop2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPipeBottom2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbGround)).EndInit();
+            this.pnlBoard.ResumeLayout(false);
+            this.pnlBoard.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,6 +261,12 @@
         private System.Windows.Forms.PictureBox pcbGround;
         private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.Panel pnlBoard;
+        private System.Windows.Forms.Label lblBoardBest;
+        private System.Windows.Forms.Label lblBoardBestText;
+        private System.Windows.Forms.Label lblBoardScore;
+        private System.Windows.Forms.Label lblBoardScoreText;
+        private System.Windows.Forms.Label lblGameScore;
+        private System.Windows.Forms.Label lblHelp;
     }
 }
 
