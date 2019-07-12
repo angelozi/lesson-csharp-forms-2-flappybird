@@ -38,12 +38,14 @@
             this.pcbGround = new System.Windows.Forms.PictureBox();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.pnlBoard = new System.Windows.Forms.Panel();
+            this.lblBoardBest = new System.Windows.Forms.Label();
+            this.lblBoardBestText = new System.Windows.Forms.Label();
+            this.lblBoardScore = new System.Windows.Forms.Label();
+            this.lblBoardScoreText = new System.Windows.Forms.Label();
             this.lblGameScore = new System.Windows.Forms.Label();
             this.lblHelp = new System.Windows.Forms.Label();
-            this.lblBoardScoreText = new System.Windows.Forms.Label();
-            this.lblBoardScore = new System.Windows.Forms.Label();
-            this.lblBoardBestText = new System.Windows.Forms.Label();
-            this.lblBoardBest = new System.Windows.Forms.Label();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.btnRestart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFlappyBird)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPipeTop1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPipeBottom1)).BeginInit();
@@ -144,6 +146,54 @@
             this.pnlBoard.Size = new System.Drawing.Size(418, 225);
             this.pnlBoard.TabIndex = 1;
             // 
+            // lblBoardBest
+            // 
+            this.lblBoardBest.AutoSize = true;
+            this.lblBoardBest.BackColor = System.Drawing.Color.Transparent;
+            this.lblBoardBest.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBoardBest.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblBoardBest.Location = new System.Drawing.Point(215, 132);
+            this.lblBoardBest.Name = "lblBoardBest";
+            this.lblBoardBest.Size = new System.Drawing.Size(36, 39);
+            this.lblBoardBest.TabIndex = 3;
+            this.lblBoardBest.Text = "0";
+            // 
+            // lblBoardBestText
+            // 
+            this.lblBoardBestText.AutoSize = true;
+            this.lblBoardBestText.BackColor = System.Drawing.Color.Transparent;
+            this.lblBoardBestText.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBoardBestText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(46)))), ((int)(((byte)(1)))));
+            this.lblBoardBestText.Location = new System.Drawing.Point(61, 132);
+            this.lblBoardBestText.Name = "lblBoardBestText";
+            this.lblBoardBestText.Size = new System.Drawing.Size(107, 39);
+            this.lblBoardBestText.TabIndex = 2;
+            this.lblBoardBestText.Text = "BEST";
+            // 
+            // lblBoardScore
+            // 
+            this.lblBoardScore.AutoSize = true;
+            this.lblBoardScore.BackColor = System.Drawing.Color.Transparent;
+            this.lblBoardScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBoardScore.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblBoardScore.Location = new System.Drawing.Point(215, 43);
+            this.lblBoardScore.Name = "lblBoardScore";
+            this.lblBoardScore.Size = new System.Drawing.Size(36, 39);
+            this.lblBoardScore.TabIndex = 1;
+            this.lblBoardScore.Text = "0";
+            // 
+            // lblBoardScoreText
+            // 
+            this.lblBoardScoreText.AutoSize = true;
+            this.lblBoardScoreText.BackColor = System.Drawing.Color.Transparent;
+            this.lblBoardScoreText.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBoardScoreText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(46)))), ((int)(((byte)(1)))));
+            this.lblBoardScoreText.Location = new System.Drawing.Point(61, 43);
+            this.lblBoardScoreText.Name = "lblBoardScoreText";
+            this.lblBoardScoreText.Size = new System.Drawing.Size(139, 39);
+            this.lblBoardScoreText.TabIndex = 0;
+            this.lblBoardScoreText.Text = "SCORE";
+            // 
             // lblGameScore
             // 
             this.lblGameScore.AutoSize = true;
@@ -171,53 +221,28 @@
             this.lblHelp.TabIndex = 3;
             this.lblHelp.Text = "PRESS SPACE TO FLY";
             // 
-            // lblBoardScoreText
+            // btnStart
             // 
-            this.lblBoardScoreText.AutoSize = true;
-            this.lblBoardScoreText.BackColor = System.Drawing.Color.Transparent;
-            this.lblBoardScoreText.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblBoardScoreText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(46)))), ((int)(((byte)(1)))));
-            this.lblBoardScoreText.Location = new System.Drawing.Point(61, 43);
-            this.lblBoardScoreText.Name = "lblBoardScoreText";
-            this.lblBoardScoreText.Size = new System.Drawing.Size(139, 39);
-            this.lblBoardScoreText.TabIndex = 0;
-            this.lblBoardScoreText.Text = "SCORE";
+            this.btnStart.BackColor = System.Drawing.SystemColors.Control;
+            this.btnStart.BackgroundImage = global::FlappyBird.Properties.Resources.start;
+            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStart.Location = new System.Drawing.Point(287, 429);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(0);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(214, 75);
+            this.btnStart.TabIndex = 4;
+            this.btnStart.UseVisualStyleBackColor = false;
             // 
-            // lblBoardScore
+            // btnRestart
             // 
-            this.lblBoardScore.AutoSize = true;
-            this.lblBoardScore.BackColor = System.Drawing.Color.Transparent;
-            this.lblBoardScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblBoardScore.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblBoardScore.Location = new System.Drawing.Point(215, 43);
-            this.lblBoardScore.Name = "lblBoardScore";
-            this.lblBoardScore.Size = new System.Drawing.Size(36, 39);
-            this.lblBoardScore.TabIndex = 1;
-            this.lblBoardScore.Text = "0";
-            // 
-            // lblBoardBestText
-            // 
-            this.lblBoardBestText.AutoSize = true;
-            this.lblBoardBestText.BackColor = System.Drawing.Color.Transparent;
-            this.lblBoardBestText.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblBoardBestText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(46)))), ((int)(((byte)(1)))));
-            this.lblBoardBestText.Location = new System.Drawing.Point(61, 132);
-            this.lblBoardBestText.Name = "lblBoardBestText";
-            this.lblBoardBestText.Size = new System.Drawing.Size(107, 39);
-            this.lblBoardBestText.TabIndex = 2;
-            this.lblBoardBestText.Text = "BEST";
-            // 
-            // lblBoardBest
-            // 
-            this.lblBoardBest.AutoSize = true;
-            this.lblBoardBest.BackColor = System.Drawing.Color.Transparent;
-            this.lblBoardBest.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblBoardBest.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblBoardBest.Location = new System.Drawing.Point(215, 132);
-            this.lblBoardBest.Name = "lblBoardBest";
-            this.lblBoardBest.Size = new System.Drawing.Size(36, 39);
-            this.lblBoardBest.TabIndex = 3;
-            this.lblBoardBest.Text = "0";
+            this.btnRestart.BackgroundImage = global::FlappyBird.Properties.Resources.restart;
+            this.btnRestart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestart.Location = new System.Drawing.Point(287, 525);
+            this.btnRestart.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRestart.Name = "btnRestart";
+            this.btnRestart.Size = new System.Drawing.Size(214, 75);
+            this.btnRestart.TabIndex = 5;
+            this.btnRestart.UseVisualStyleBackColor = true;
             // 
             // frmGame
             // 
@@ -225,6 +250,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FlappyBird.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(752, 985);
+            this.Controls.Add(this.btnRestart);
+            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lblHelp);
             this.Controls.Add(this.lblGameScore);
             this.Controls.Add(this.pnlBoard);
@@ -267,6 +294,8 @@
         private System.Windows.Forms.Label lblBoardScoreText;
         private System.Windows.Forms.Label lblGameScore;
         private System.Windows.Forms.Label lblHelp;
+        private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.Button btnRestart;
     }
 }
 
