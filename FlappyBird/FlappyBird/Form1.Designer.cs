@@ -37,6 +37,7 @@
             this.pcbPipeBottom2 = new System.Windows.Forms.PictureBox();
             this.pcbGround = new System.Windows.Forms.PictureBox();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
+            this.pnlBoard = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFlappyBird)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPipeTop1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPipeBottom1)).BeginInit();
@@ -124,12 +125,21 @@
             // 
             this.gameTimer.Interval = 15;
             // 
+            // pnlBoard
+            // 
+            this.pnlBoard.BackgroundImage = global::FlappyBird.Properties.Resources.board;
+            this.pnlBoard.Location = new System.Drawing.Point(187, 271);
+            this.pnlBoard.Name = "pnlBoard";
+            this.pnlBoard.Size = new System.Drawing.Size(418, 225);
+            this.pnlBoard.TabIndex = 1;
+            // 
             // frmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FlappyBird.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(752, 985);
+            this.Controls.Add(this.pnlBoard);
             this.Controls.Add(this.pcbGround);
             this.Controls.Add(this.pcbPipeBottom2);
             this.Controls.Add(this.pcbPipeTop2);
@@ -160,6 +170,7 @@
         private System.Windows.Forms.PictureBox pcbPipeBottom2;
         private System.Windows.Forms.PictureBox pcbGround;
         private System.Windows.Forms.Timer gameTimer;
+        private System.Windows.Forms.Panel pnlBoard;
     }
 }
 
