@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGame));
             this.pcbFlappyBird = new System.Windows.Forms.PictureBox();
             this.pcbPipeTop1 = new System.Windows.Forms.PictureBox();
@@ -35,6 +36,7 @@
             this.pcbPipeTop2 = new System.Windows.Forms.PictureBox();
             this.pcbPipeBottom2 = new System.Windows.Forms.PictureBox();
             this.pcbGround = new System.Windows.Forms.PictureBox();
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pcbFlappyBird)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPipeTop1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPipeBottom1)).BeginInit();
@@ -118,6 +120,10 @@
             this.pcbGround.TabIndex = 0;
             this.pcbGround.TabStop = false;
             // 
+            // gameTimer
+            // 
+            this.gameTimer.Interval = 15;
+            // 
             // frmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,6 +159,7 @@
         private System.Windows.Forms.PictureBox pcbPipeTop2;
         private System.Windows.Forms.PictureBox pcbPipeBottom2;
         private System.Windows.Forms.PictureBox pcbGround;
+        private System.Windows.Forms.Timer gameTimer;
     }
 }
 
