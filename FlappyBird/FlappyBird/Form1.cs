@@ -127,7 +127,7 @@ namespace FlappyBird
                     pcbPipeTop1.Left = this.Size.Width;
 
                     /* Her kaydırma işleminde pipe nesnelerinin yükseklikleri değişiklik göstermelidir. Bu şekilde oyundaki engellerin değişimi sağlanarak oyuna akıcılık kazandırılmış olur. */
-                    int rndTop = rnd.Next(400, 750); 
+                    int rndTop = rnd.Next(500, 750); 
                     int fark = pcbPipeBottom1.Top - rndTop;
                     pcbPipeBottom1.Top = rndTop;
                     pcbPipeTop1.Top -= fark;
@@ -144,7 +144,7 @@ namespace FlappyBird
                     pcbPipeTop2.Left = pcbPipeBottom1.Left + rndDistance;
 
                     /* Her kaydırma işleminde pipe nesnelerinin yükseklikleri değişiklik göstermelidir. Bu şekilde oyundaki engellerin değişimi sağlanarak oyuna akıcılık kazandırılmış olur. */
-                    int rndTop = rnd.Next(400, 750);
+                    int rndTop = rnd.Next(500, 750);
                     int fark = pcbPipeBottom2.Top - rndTop;
                     pcbPipeBottom2.Top = rndTop;
                     pcbPipeTop2.Top -= fark;
@@ -229,9 +229,6 @@ namespace FlappyBird
             btnStart.Visible = false;
             lblHelp.Visible = false;
 
-            /*pcbFlappyBird nesnesinin hareketini tetiklemek için değer ataması yapılır*/
-            birdTopCount = 15; 
-
             /* Oyun algoritmasının devreye alınması sağlanır. */
             gameTimer.Start();
         }
@@ -250,23 +247,28 @@ namespace FlappyBird
 
         private void BtnRestart_MouseClick(object sender, MouseEventArgs e)
         {
+            /* Oyun başladıktan sonra btnStart ve pnlBoard nesneleri gizlenir. */
             btnRestart.Visible = false;
             pnlBoard.Visible = false;
 
+            /* Oyun başlaması için flappyBird ve pipe nesnelerinin pozisyonları ve gizlilikleri düzenlenir. */
             PipesReset();
 
+            /* Oyun puanı yeniden başlatılması için gameScore global değişkeninin değeri 0 olarak atanır. */
             gameScore = 0;
 
+            /* Oyun sırasında herbir pipe nesnesi geçişinde kazanılan 1 puan oyuncuya gösterimi sağlanır*/
             lblGameScore.Text = "0";
 
+            /* Bir önceki sonlanan oyun sırasında pcbFlappyBird nesnesini hareket ettirmek için arttırılıp / azaltılan birdTopCount değeri 0 olarak atanır.*/
             birdTopCount = 0;
 
+            /* Oyun algoritmasının devreye alınması sağlanır. */
             gameTimer.Start();
         }
 
         private void BtnRestart_MouseEnter(object sender, EventArgs e)
         {
-           
             /* Fare ile üzerine gelindiğinde 2 pixel üst (top) pozisyonu arttırılarak aşağı doğru hareket sağlanır*/
             btnRestart.Top += 2;
         }
