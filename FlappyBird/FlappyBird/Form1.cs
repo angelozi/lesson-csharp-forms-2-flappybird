@@ -18,8 +18,13 @@ namespace FlappyBird
         /*özel yazı tipi koleksiyonu için PrivateFontCollection sınıfından FontFamily koleksiyonu eklenir.*/
         public PrivateFontCollection pfc = new PrivateFontCollection();
 
+        /* Space tuşu ile değer alarak time methodu ile flappyBird nesnesini yukarı / aşağı taşınmasını sağlamak için */
         public int birdTopCount = 0;
+
+        /* Bir oyun başlayıp bitme sürecinde her bir pipeden geçişde alınan 1 puanı tutmak için*/
         public int gameScore = 0;
+
+        /* Oyundan çıkış yapılmadığı sürece her yeni oyunda en yüksek elde edilen puanı tutmak için*/
         public int gameBestScore = 0;
 
 
@@ -97,8 +102,11 @@ namespace FlappyBird
                 /* Pipe nesnelerinden geçen pcbFlappyBird nesnesinin top pozisyonu, space tuşu ile değer atanan "birdTopCount" değeri kadar arttırılır. */
                 /* Bu şekilde pcbFlappyBird nesnesinin yer çekimine doğru hareketi sağlanır. */
                 pcbFlappyBird.Top += birdTopCount;
-
-
+               
+                if (pcbFlappyBird.Top % 5 == 0)
+                {
+                    birdTopCount += 1;
+                }
 
                 /* Pipe nesnelerinin sol (left) pozisyonlarını 10 pixel azaltılır.*/
                 /* Bu şekilde pipe nesnelerinin yer çekimine yatay hareketi sağlanır. */
@@ -222,6 +230,7 @@ namespace FlappyBird
             /* GameTimer_Tick methodunda pcbFlappyBird nesnesinin top pozisyonu birdTopCount değeri kadar arttırılmaktadır. */
             /* Negatif değere sahip olunduğunda pcbFlappyBird nesnesinin top pozisyonu azalır ve yukarı doğru hareketi sağlanmış olur.*/
             /* Bu işlemde her basımda hızlı yukarı çıkma sağlanır.*/
+            
             if (e.KeyCode == Keys.Space)
             {
                 birdTopCount = -15;
@@ -239,22 +248,6 @@ namespace FlappyBird
             {
                 birdTopCount = 15;
             }
-        }
-
-        private void BtnStart_Click(object sender, EventArgs e)
-        {
-            /* Oyun sırasında herbir pipe nesnesi geçişinde kazanılan 1 puan oyuncuya gösterimi sağlanır*/
-            lblGameScore.Text = "0";
-
-            /* Oyun başlaması için flappyBird ve pipe nesnelerinin pozisyonları ve gizlilikleri düzenlenir. */
-            PipesReset();
-
-            /* Oyun başladıktan sonra btnStart ve lblHelp nesneleri gizlenir. */
-            btnStart.Visible = false;
-            lblHelp.Visible = false;
-
-            /* Oyun algoritmasının devreye alınması sağlanır. */
-            gameTimer.Start();
         }
 
 
@@ -278,11 +271,28 @@ namespace FlappyBird
             pcbFlappyBird.Visible = true;
         }
 
+        private void BtnStart_MouseClick(object sender, MouseEventArgs e)
+        {
+            /* Oyun sırasında herbir pipe nesnesi geçişinde kazanılan 1 puan oyuncuya gösterimi sağlanır*/
+            lblGameScore.Text = "0";
+
+            /* Oyun başlaması için flappyBird ve pipe nesnelerinin pozisyonları ve gizlilikleri düzenlenir. */
+            PipesReset();
+
+            /* Oyun başladıktan sonra btnStart ve lblHelp nesneleri gizlenir. */
+            btnStart.Visible = false;
+            lblHelp.Visible = false;
+
+            /* Oyun algoritmasının devreye alınması sağlanır. */
+            gameTimer.Start();
+        }
+
         private void BtnStart_MouseEnter(object sender, EventArgs e)
         {
             /* Fare ile üzerine gelindiğinde 2 pixel üst (top) pozisyonu arttırılarak aşağı doğru hareket sağlanır*/
             btnStart.Top += 2;
         }
+
 
         private void BtnStart_MouseLeave(object sender, EventArgs e)
         {
@@ -290,30 +300,43 @@ namespace FlappyBird
             btnStart.Top -= 2;
         }
 
-        private void BtnRestart_Click(object sender, EventArgs e)
+        private void BtnRestart_MouseClick(object sender, MouseEventArgs e)
         {
             btnRestart.Visible = false;
             pnlBoard.Visible = false;
+
             PipesReset();
+
             gameScore = 0;
+
             lblGameScore.Text = "0";
+
             birdTopCount = 0;
+
             gameTimer.Start();
         }
 
         private void BtnRestart_MouseEnter(object sender, EventArgs e)
         {
+           
+            /* Fare ile üzerine gelindiğinde 2 pixel üst (top) pozisyonu arttırılarak aşağı doğru hareket sağlanır*/
             btnRestart.Top += 2;
         }
 
         private void BtnRestart_MouseLeave(object sender, EventArgs e)
         {
+            /* Fare ile üzerine gelindiğinde 2 pixel üst (top) pozisyonu azaltılarak aşağı yukarı hareket sağlanır*/
             btnRestart.Top -= 2;
         }
 
+        /*
+         * Form nesnesi kapatıldığında FontCollection tarafından kullanılan kaynakları "Dispose" methodu ile serbest bırakır. 
+         */
         private void FrmGame_FormClosed(object sender, FormClosedEventArgs e)
         {
             pfc.Dispose();
         }
+
+       
     }
 }

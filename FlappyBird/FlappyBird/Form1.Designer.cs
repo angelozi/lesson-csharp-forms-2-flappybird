@@ -222,7 +222,7 @@
             this.lblHelp.BackColor = System.Drawing.Color.Transparent;
             this.lblHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblHelp.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblHelp.Location = new System.Drawing.Point(255, 539);
+            this.lblHelp.Location = new System.Drawing.Point(238, 541);
             this.lblHelp.Name = "lblHelp";
             this.lblHelp.Size = new System.Drawing.Size(306, 37);
             this.lblHelp.TabIndex = 3;
@@ -238,9 +238,10 @@
             this.btnStart.Margin = new System.Windows.Forms.Padding(0);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(214, 75);
-            this.btnStart.TabIndex = 4;
+            this.btnStart.TabIndex = 1;
+            this.btnStart.TabStop = false;
             this.btnStart.UseVisualStyleBackColor = false;
-            this.btnStart.Click += new System.EventHandler(this.BtnStart_Click);
+            this.btnStart.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnStart_MouseClick);
             this.btnStart.MouseEnter += new System.EventHandler(this.BtnStart_MouseEnter);
             this.btnStart.MouseLeave += new System.EventHandler(this.BtnStart_MouseLeave);
             // 
@@ -252,10 +253,12 @@
             this.btnRestart.Margin = new System.Windows.Forms.Padding(0);
             this.btnRestart.Name = "btnRestart";
             this.btnRestart.Size = new System.Drawing.Size(214, 75);
-            this.btnRestart.TabIndex = 5;
+            this.btnRestart.TabIndex = 1;
+            this.btnRestart.TabStop = false;
             this.btnRestart.UseVisualStyleBackColor = true;
             this.btnRestart.Visible = false;
-            this.btnRestart.Click += new System.EventHandler(this.BtnRestart_Click);
+            this.btnRestart.Click += new System.EventHandler(this.FrmGame_Load);
+            this.btnRestart.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnRestart_MouseClick);
             this.btnRestart.MouseEnter += new System.EventHandler(this.BtnRestart_MouseEnter);
             this.btnRestart.MouseLeave += new System.EventHandler(this.BtnRestart_MouseLeave);
             // 
@@ -277,6 +280,7 @@
             this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.pnlBoard);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "frmGame";
             this.Text = "FlappyBird";

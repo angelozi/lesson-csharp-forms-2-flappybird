@@ -7,3 +7,4 @@ F:\GitHub\lesson-csharp-forms-2-flappybird\FlappyBird\FlappyBird\obj\Debug\Flapp
 F:\GitHub\lesson-csharp-forms-2-flappybird\FlappyBird\FlappyBird\obj\Debug\FlappyBird.csproj.CoreCompileInputs.cache
 F:\GitHub\lesson-csharp-forms-2-flappybird\FlappyBird\FlappyBird\obj\Debug\FlappyBird.exe
 F:\GitHub\lesson-csharp-forms-2-flappybird\FlappyBird\FlappyBird\obj\Debug\FlappyBird.pdb
+F:\GitHub\lesson-csharp-forms-2-flappybird\FlappyBird\FlappyBird\obj\Debug\FlappyBird.csprojAssemblyReference.cache
