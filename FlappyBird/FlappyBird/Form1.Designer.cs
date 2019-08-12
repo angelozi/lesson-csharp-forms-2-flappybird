@@ -240,6 +240,9 @@
             this.btnStart.Size = new System.Drawing.Size(214, 75);
             this.btnStart.TabIndex = 4;
             this.btnStart.UseVisualStyleBackColor = false;
+            this.btnStart.Click += new System.EventHandler(this.BtnStart_Click);
+            this.btnStart.MouseEnter += new System.EventHandler(this.BtnStart_MouseEnter);
+            this.btnStart.MouseLeave += new System.EventHandler(this.BtnStart_MouseLeave);
             // 
             // btnRestart
             // 
@@ -252,6 +255,9 @@
             this.btnRestart.TabIndex = 5;
             this.btnRestart.UseVisualStyleBackColor = true;
             this.btnRestart.Visible = false;
+            this.btnRestart.Click += new System.EventHandler(this.BtnRestart_Click);
+            this.btnRestart.MouseEnter += new System.EventHandler(this.BtnRestart_MouseEnter);
+            this.btnRestart.MouseLeave += new System.EventHandler(this.BtnRestart_MouseLeave);
             // 
             // frmGame
             // 
@@ -274,7 +280,10 @@
             this.MaximizeBox = false;
             this.Name = "frmGame";
             this.Text = "FlappyBird";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmGame_FormClosed);
             this.Load += new System.EventHandler(this.FrmGame_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmGame_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmGame_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pcbFlappyBird)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPipeTop1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPipeBottom1)).EndInit();

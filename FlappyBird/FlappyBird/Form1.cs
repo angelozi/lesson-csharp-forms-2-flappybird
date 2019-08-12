@@ -46,7 +46,8 @@ namespace FlappyBird
             lblBoardBest.Font = new Font(pfc.Families[0], lblBoardBest.Font.Size);
             lblBoardBestText.Font = new Font(pfc.Families[0], lblBoardBestText.Font.Size);
 
-
+            /* Oyun açıldığında tema müziğinin çalınması sağlanır. */
+            PlayThemeSound();
         }
 
         private void GameTimer_Tick(object sender, EventArgs e)
@@ -83,13 +84,13 @@ namespace FlappyBird
                 {
                     gameScore++;
                     lblGameScore.Text = gameScore.ToString();
-                    playSound("point");
+                    PlaySound("point");
                 }
                 else if (pcbFlappyBird.Left >= pcbPipeTop2.Right && pcbFlappyBird.Left - 10 <= pcbPipeTop2.Right)
                 {
                     gameScore++;
                     lblGameScore.Text = gameScore.ToString();
-                    playSound("point");
+                    PlaySound("point");
                 }
 
 
@@ -151,7 +152,8 @@ namespace FlappyBird
 
         private void EndGame()
         {
-            playSound("hit");
+            /* Oyun bittiğinde oyuncu için bilgi mesajı verilir. Timer Tick methodu durdurulur*/
+            PlaySound("hit");
 
             lblGameScore.Text = "Game Over";
 
@@ -165,13 +167,15 @@ namespace FlappyBird
                 gameBestScore = gameScore;
             }
 
-            playSound("die");
+            /* Oyun bitim işleminde ekrandaki oyun nesneleri gizlenerek puan tablosunun gösterimi sağlanır.*/
+
+            PlaySound("die");
 
             pcbPipeTop1.Visible = false;
             pcbPipeBottom1.Visible = false;
             pcbPipeTop2.Visible = false;
             pcbPipeBottom2.Visible = false;
-            btnRestart.Visible = true;
+            btnRestart.Visible = true;             
             pcbFlappyBird.Visible = false;
 
             lblBoardScore.Text = gameScore.ToString();
@@ -179,12 +183,12 @@ namespace FlappyBird
 
             pnlBoard.Visible = true;
 
-
-            playThemeSound();
+            /* Oyun puan tablosu gösteriminde tema müziği çalınır*/
+            PlayThemeSound();
 
         }
 
-        private void playSound(string soundName)
+        private void PlaySound(string soundName)
         {
             SoundPlayer sound = new SoundPlayer();
 
@@ -207,11 +211,109 @@ namespace FlappyBird
             sound.Play();
         }
 
-        private void playThemeSound()
+        private void PlayThemeSound()
         {
             SoundPlayer sound = new SoundPlayer(Properties.Resources.ThemeSound);
             sound.PlayLooping();
         }
 
+        private void FrmGame_KeyDown(object sender, KeyEventArgs e)
+        {
+            /* GameTimer_Tick methodunda pcbFlappyBird nesnesinin top pozisyonu birdTopCount değeri kadar arttırılmaktadır. */
+            /* Negatif değere sahip olunduğunda pcbFlappyBird nesnesinin top pozisyonu azalır ve yukarı doğru hareketi sağlanmış olur.*/
+            /* Bu işlemde her basımda hızlı yukarı çıkma sağlanır.*/
+            if (e.KeyCode == Keys.Space)
+            {
+                birdTopCount = -15;
+                PlaySound("jump");
+
+            }
+        }
+
+        private void FrmGame_KeyUp(object sender, KeyEventArgs e)
+        {
+            /* GameTimer_Tick methodunda pcbFlappyBird nesnesinin top pozisyonu birdTopCount değeri kadar arttırılmaktadır. */
+            /* Pozitif sabit değere sahip olunduğunda pcbFlappyBird nesnesinin top pozisyonu artar ve aşağı doğru hareketi sağlanmış olur.*/
+            /* Bu işlemde tuşa basılmadığında sabit hızla aşağı inme sağlanır. */
+            if (e.KeyCode == Keys.Space)
+            {
+                birdTopCount = 15;
+            }
+        }
+
+        private void BtnStart_Click(object sender, EventArgs e)
+        {
+            /* Oyun sırasında herbir pipe nesnesi geçişinde kazanılan 1 puan oyuncuya gösterimi sağlanır*/
+            lblGameScore.Text = "0";
+
+            /* Oyun başlaması için flappyBird ve pipe nesnelerinin pozisyonları ve gizlilikleri düzenlenir. */
+            PipesReset();
+
+            /* Oyun başladıktan sonra btnStart ve lblHelp nesneleri gizlenir. */
+            btnStart.Visible = false;
+            lblHelp.Visible = false;
+
+            /* Oyun algoritmasının devreye alınması sağlanır. */
+            gameTimer.Start();
+        }
+
+
+        /*
+         Oyun başlatılmasına nesnelerin hazırlanmasını sağlar.
+         Form üzerinde nesnelerin pozisyonları belirlenir. Gizlikleri kaldırılır.
+         Oyun Başlat ve Yeniden Başlat işlemlerinde kullanılır.
+         */
+        private void PipesReset()
+        {
+            pcbPipeTop1.Location = new System.Drawing.Point(602, -535);
+            pcbPipeBottom1.Location = new System.Drawing.Point(602, 500);
+            pcbPipeTop2.Location = new System.Drawing.Point(1000, -535);
+            pcbPipeBottom2.Location = new System.Drawing.Point(1000, 500);
+            pcbFlappyBird.Location = new System.Drawing.Point(345, 271);
+
+            pcbPipeTop1.Visible = true;
+            pcbPipeBottom1.Visible = true;
+            pcbPipeTop2.Visible = true;
+            pcbPipeBottom2.Visible = true;
+            pcbFlappyBird.Visible = true;
+        }
+
+        private void BtnStart_MouseEnter(object sender, EventArgs e)
+        {
+            /* Fare ile üzerine gelindiğinde 2 pixel üst (top) pozisyonu arttırılarak aşağı doğru hareket sağlanır*/
+            btnStart.Top += 2;
+        }
+
+        private void BtnStart_MouseLeave(object sender, EventArgs e)
+        {
+            /* Fare ile üzerine gelindiğinde 2 pixel üst (top) pozisyonu azaltılarak aşağı yukarı hareket sağlanır*/
+            btnStart.Top -= 2;
+        }
+
+        private void BtnRestart_Click(object sender, EventArgs e)
+        {
+            btnRestart.Visible = false;
+            pnlBoard.Visible = false;
+            PipesReset();
+            gameScore = 0;
+            lblGameScore.Text = "0";
+            birdTopCount = 0;
+            gameTimer.Start();
+        }
+
+        private void BtnRestart_MouseEnter(object sender, EventArgs e)
+        {
+            btnRestart.Top += 2;
+        }
+
+        private void BtnRestart_MouseLeave(object sender, EventArgs e)
+        {
+            btnRestart.Top -= 2;
+        }
+
+        private void FrmGame_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            pfc.Dispose();
+        }
     }
 }
