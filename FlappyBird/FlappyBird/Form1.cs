@@ -103,11 +103,7 @@ namespace FlappyBird
                 /* Bu şekilde pcbFlappyBird nesnesinin yer çekimine doğru hareketi sağlanır. */
                 pcbFlappyBird.Top += birdTopCount;
                
-                if (pcbFlappyBird.Top % 5 == 0)
-                {
-                    birdTopCount += 1;
-                }
-
+               
                 /* Pipe nesnelerinin sol (left) pozisyonlarını 10 pixel azaltılır.*/
                 /* Bu şekilde pipe nesnelerinin yer çekimine yatay hareketi sağlanır. */
                 pcbPipeBottom1.Left -= 10;
@@ -196,35 +192,6 @@ namespace FlappyBird
 
         }
 
-        private void PlaySound(string soundName)
-        {
-            SoundPlayer sound = new SoundPlayer();
-
-            switch (soundName)
-            {
-                case "jump":
-                    sound.Stream = Properties.Resources.JumpSound;
-                    break;
-                case "point":
-                    sound.Stream = Properties.Resources.PointSound;
-                    break;
-                case "die":
-                    sound.Stream = Properties.Resources.DieSound;
-                    break;
-                case "hit":
-                    sound.Stream = Properties.Resources.HitSound;
-                    break;
-            }
-
-            sound.Play();
-        }
-
-        private void PlayThemeSound()
-        {
-            SoundPlayer sound = new SoundPlayer(Properties.Resources.ThemeSound);
-            sound.PlayLooping();
-        }
-
         private void FrmGame_KeyDown(object sender, KeyEventArgs e)
         {
             /* GameTimer_Tick methodunda pcbFlappyBird nesnesinin top pozisyonu birdTopCount değeri kadar arttırılmaktadır. */
@@ -250,27 +217,6 @@ namespace FlappyBird
             }
         }
 
-
-        /*
-         Oyun başlatılmasına nesnelerin hazırlanmasını sağlar.
-         Form üzerinde nesnelerin pozisyonları belirlenir. Gizlikleri kaldırılır.
-         Oyun Başlat ve Yeniden Başlat işlemlerinde kullanılır.
-         */
-        private void PipesReset()
-        {
-            pcbPipeTop1.Location = new System.Drawing.Point(602, -535);
-            pcbPipeBottom1.Location = new System.Drawing.Point(602, 500);
-            pcbPipeTop2.Location = new System.Drawing.Point(1000, -535);
-            pcbPipeBottom2.Location = new System.Drawing.Point(1000, 500);
-            pcbFlappyBird.Location = new System.Drawing.Point(345, 271);
-
-            pcbPipeTop1.Visible = true;
-            pcbPipeBottom1.Visible = true;
-            pcbPipeTop2.Visible = true;
-            pcbPipeBottom2.Visible = true;
-            pcbFlappyBird.Visible = true;
-        }
-
         private void BtnStart_MouseClick(object sender, MouseEventArgs e)
         {
             /* Oyun sırasında herbir pipe nesnesi geçişinde kazanılan 1 puan oyuncuya gösterimi sağlanır*/
@@ -283,6 +229,9 @@ namespace FlappyBird
             btnStart.Visible = false;
             lblHelp.Visible = false;
 
+            /*pcbFlappyBird nesnesinin hareketini tetiklemek için değer ataması yapılır*/
+            birdTopCount = 15; 
+
             /* Oyun algoritmasının devreye alınması sağlanır. */
             gameTimer.Start();
         }
@@ -292,7 +241,6 @@ namespace FlappyBird
             /* Fare ile üzerine gelindiğinde 2 pixel üst (top) pozisyonu arttırılarak aşağı doğru hareket sağlanır*/
             btnStart.Top += 2;
         }
-
 
         private void BtnStart_MouseLeave(object sender, EventArgs e)
         {
@@ -337,6 +285,55 @@ namespace FlappyBird
             pfc.Dispose();
         }
 
-       
+        /*
+         Oyun başlatılmasına nesnelerin hazırlanmasını sağlar.
+         Form üzerinde nesnelerin pozisyonları belirlenir. Gizlikleri kaldırılır.
+         Oyun Başlat ve Yeniden Başlat işlemlerinde kullanılır.
+         */
+        private void PipesReset()
+        {
+            pcbPipeTop1.Location = new System.Drawing.Point(602, -535);
+            pcbPipeBottom1.Location = new System.Drawing.Point(602, 500);
+            pcbPipeTop2.Location = new System.Drawing.Point(1000, -535);
+            pcbPipeBottom2.Location = new System.Drawing.Point(1000, 500);
+            pcbFlappyBird.Location = new System.Drawing.Point(345, 271);
+
+            pcbPipeTop1.Visible = true;
+            pcbPipeBottom1.Visible = true;
+            pcbPipeTop2.Visible = true;
+            pcbPipeBottom2.Visible = true;
+            pcbFlappyBird.Visible = true;
+        }
+        
+        private void PlaySound(string soundName)
+        {
+            SoundPlayer sound = new SoundPlayer();
+
+            switch (soundName)
+            {
+                case "jump":
+                    sound.Stream = Properties.Resources.JumpSound;
+                    break;
+                case "point":
+                    sound.Stream = Properties.Resources.PointSound;
+                    break;
+                case "die":
+                    sound.Stream = Properties.Resources.DieSound;
+                    break;
+                case "hit":
+                    sound.Stream = Properties.Resources.HitSound;
+                    break;
+            }
+
+            sound.Play();
+        }
+
+        private void PlayThemeSound()
+        {
+            SoundPlayer sound = new SoundPlayer(Properties.Resources.ThemeSound);
+            sound.PlayLooping();
+        }
+
+
     }
 }

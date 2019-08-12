@@ -222,7 +222,7 @@
             this.lblHelp.BackColor = System.Drawing.Color.Transparent;
             this.lblHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblHelp.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblHelp.Location = new System.Drawing.Point(238, 541);
+            this.lblHelp.Location = new System.Drawing.Point(258, 541);
             this.lblHelp.Name = "lblHelp";
             this.lblHelp.Size = new System.Drawing.Size(306, 37);
             this.lblHelp.TabIndex = 3;
