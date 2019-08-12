@@ -105,5 +105,20 @@
   <ItemGroup>
     <None Include="Resources\restart.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DieSound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HitSound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JumpSound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PointSound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ThemeSound.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

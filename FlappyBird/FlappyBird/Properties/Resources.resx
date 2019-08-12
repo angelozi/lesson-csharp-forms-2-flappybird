@@ -145,4 +145,19 @@
   <data name="flappyfont" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flappyfont.TTF;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="DieSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DieSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HitSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HitSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="JumpSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\JumpSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PointSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PointSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ThemeSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ThemeSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

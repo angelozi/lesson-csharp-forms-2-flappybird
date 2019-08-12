@@ -133,6 +133,7 @@
             // gameTimer
             // 
             this.gameTimer.Interval = 15;
+            this.gameTimer.Tick += new System.EventHandler(this.GameTimer_Tick);
             // 
             // pnlBoard
             // 
